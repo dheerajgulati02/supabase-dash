@@ -18,51 +18,56 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 
-const frameworks = [
+const projects = [
   {
-    value: 'Md Izaan Anwar',
-    label: 'Izaan',
+    value: 'My test project',
+    label: 'test',
   },
 ];
 
-export function SelectUser() {
+export default function SelectProject() {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState('');
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild className="border-none">
+      <PopoverTrigger asChild className="border-none hover:bg-card">
         <Button
+          size="sm"
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between"
+          className="w-fit justify-between"
         >
-          {value
-            ? frameworks.find((framework) => framework.value === value)?.label
-            : 'Select framework...'}
+          {value ? (
+            <div className="flex justify-between w-full">
+              <>{projects.find((project) => project.value === value)?.label}</>
+            </div>
+          ) : (
+            'Test'
+          )}
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search framework..." className="h-9" />
-          <CommandEmpty>No framework found.</CommandEmpty>
+          <CommandInput placeholder="Search Projects..." className="h-9" />
+          <CommandEmpty>No Project Found.</CommandEmpty>
           <CommandGroup>
-            {frameworks.map((framework) => (
+            {projects.map((project) => (
               <CommandItem
-                key={framework.value}
-                value={framework.value}
+                key={project.value}
+                value={project.value}
                 onSelect={(currentValue) => {
                   setValue(currentValue === value ? '' : currentValue);
                   setOpen(false);
                 }}
               >
-                {framework.label}
+                {project.label}
                 <CheckIcon
                   className={cn(
                     'ml-auto h-4 w-4',
-                    value === framework.value ? 'opacity-100' : 'opacity-0',
+                    value === project.value ? 'opacity-100' : 'opacity-0',
                   )}
                 />
               </CommandItem>

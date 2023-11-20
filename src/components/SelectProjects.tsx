@@ -25,7 +25,11 @@ const projects = [
   },
 ];
 
-export default function SelectProject() {
+export default function SelectProject({
+  projectName,
+}: {
+  projectName: string;
+}) {
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState('');
 
@@ -39,12 +43,12 @@ export default function SelectProject() {
           aria-expanded={open}
           className="w-fit justify-between"
         >
-          {value ? (
+          {projectName ? (
             <div className="flex justify-between w-full">
-              <>{projects.find((project) => project.value === value)?.label}</>
+              <>{projectName}</>
             </div>
           ) : (
-            'Test'
+            'testProject'
           )}
           <CaretSortIcon className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>

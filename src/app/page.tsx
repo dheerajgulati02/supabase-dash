@@ -45,7 +45,7 @@ export default function Home() {
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     if (values.username === 'admin' && values.password === 'admin123') {
-      router.push('/dashboard');
+      router.push('/dashboard/projects');
       return;
     }
   }
@@ -100,6 +100,7 @@ export default function Home() {
         </div>
         <div>
           <Button
+            onClick={() => router.push('/dashboard/projects')}
             variant="default"
             size="sm"
             className="bg-accentPr hover:bg-[hsl(152,47%,36%)] border border-secondary text-gray-200 "

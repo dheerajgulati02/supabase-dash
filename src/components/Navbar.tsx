@@ -1,14 +1,24 @@
+'use client';
 import SelectProject from './SelectProjects';
 import SelectOrganisation from './SelectOrganisation';
 import { Button } from './ui/button';
+import { usePathname } from 'next/navigation';
 
-const Navbar = async () => {
+const Navbar = () => {
+  const currPath = usePathname();
+  if (currPath === '/') return;
+  const currPathLgth = currPath.split('/');
+  const myProjectId = currPathLgth[currPathLgth.length - 1];
+  console.log(myProjectId);
+
   return (
     <nav className="bg-background flex justify-between items-center p-4 w-full h-12 sticky top-0 border-b border-secondary-foreground">
       <section className="flex justify-between items-center">
-        <SelectOrganisation />
+        <span className={`${currPath === '/dashboard/projects' && 'hidden'}`}>
+          <SelectOrganisation />
+        </span>
         <p className="text-primary-foreground px-2">/</p>
-        <SelectProject />
+        <SelectProject projectName={myProjectId} />
       </section>
       <section className="flex justify-between items-center ">
         <Button

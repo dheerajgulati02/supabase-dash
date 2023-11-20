@@ -1,3 +1,4 @@
+'use client';
 import Image from 'next/image';
 import {
   AuthenticationIcon,
@@ -17,18 +18,26 @@ import {
 
 import { Button } from './ui/button';
 import { Separator } from './ui/separator';
+import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
-const Sidebar = async () => {
+const Sidebar = () => {
+  const currPath = usePathname();
+  if (currPath === '/' || currPath === '/dashboard/projects') {
+    return;
+  }
   return (
     <nav className="w-[4%] px-2 min-h-screen border-r  border-secondary-foreground">
       <div className="sticky top-0 py-2">
         <div className="p-1">
-          <Image
-            src="supabase-logo.svg"
-            alt="supabase logo"
-            width={24}
-            height={24}
-          />
+          <Link href="/">
+            <Image
+              src="/supabase-logo.svg"
+              alt="supabase logo"
+              width={24}
+              height={24}
+            />
+          </Link>
         </div>
         <section className="py-3">
           <TooltipProvider delayDuration={0}>

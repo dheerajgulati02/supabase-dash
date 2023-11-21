@@ -3,6 +3,7 @@ import SelectProject from './SelectProjects';
 import SelectOrganisation from './SelectOrganisation';
 import { Button } from './ui/button';
 import { usePathname } from 'next/navigation';
+import { Separator } from './ui/separator';
 
 const Navbar = () => {
   const currPath = usePathname();
@@ -13,11 +14,9 @@ const Navbar = () => {
 
   return (
     <nav className="bg-background flex justify-between items-center p-4 w-full h-12 sticky top-0 border-b border-secondary-foreground">
-      <section className="flex justify-between items-center">
-        <span className={`${currPath === '/dashboard/projects' && 'hidden'}`}>
-          <SelectOrganisation />
-        </span>
-        <p className="text-primary-foreground px-2">/</p>
+      <section className="flex justify-between items-center ">
+        <SelectOrganisation />
+        <p className="text-primary-foreground px-2 ">/</p>
         <SelectProject projectName={myProjectId} />
       </section>
       <section className="flex justify-between items-center ">

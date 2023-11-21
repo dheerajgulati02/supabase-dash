@@ -1,7 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import './globals.css';
-import '@radix-ui/themes/styles.css';
+import '../globals.css';
 import Sidebar from '@/components/Sidebar';
 import Navbar from '@/components/Navbar';
 
@@ -24,9 +23,7 @@ export default function RootLayout({
           <Sidebar />
           <div className="w-full">
             <Navbar />
-            <section>
-                {children}
-              </section>
+            <section>{children}</section>
           </div>
         </div>
       </body>

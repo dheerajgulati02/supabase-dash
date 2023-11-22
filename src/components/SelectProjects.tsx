@@ -35,7 +35,10 @@ export default function SelectProject({
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild className="border-none hover:bg-card">
+      <PopoverTrigger
+        asChild
+        className="border-none hover:bg-popover hover:text-foreground"
+      >
         <Button
           size="sm"
           variant="outline"

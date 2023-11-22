@@ -15,7 +15,7 @@ export default function DatabaseExpanded() {
           <ul className="py-2 ">
             <li
               className={`hover:bg-primary p-2 rounded-md w-full ${
-                lastPathParam === 'tables' && 'text-foreground'
+                lastPathParam === 'tables' && 'text-foreground bg-secondary'
               }`}
             >
               Tables

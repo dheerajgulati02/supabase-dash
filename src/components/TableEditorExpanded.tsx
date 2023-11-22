@@ -44,7 +44,7 @@ export function SchemaSelector({ defSchema }: { defSchema: string[] }) {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild className="mx-auto border-secondary-foreground">
+      <PopoverTrigger asChild className="border-secondary-foreground">
         <Button
           variant="outline"
           size="sm"
@@ -58,7 +58,7 @@ export function SchemaSelector({ defSchema }: { defSchema: string[] }) {
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-fit p-0 ml-16">
+      <PopoverContent className="w-full p-0 ml-16">
         <Command>
           <CommandInput placeholder="Search Schema..." />
           <CommandEmpty>No framework found.</CommandEmpty>

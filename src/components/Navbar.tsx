@@ -4,6 +4,7 @@ import SelectOrganisation from './SelectOrganisation';
 import { Button } from './ui/button';
 import { usePathname } from 'next/navigation';
 import { Separator } from './ui/separator';
+import { ModeToggle } from './ThemeModeToggle';
 
 const Navbar = () => {
   const currPath = usePathname();
@@ -20,6 +21,9 @@ const Navbar = () => {
         <SelectProject projectName={myProjectId} />
       </section>
       <section className="flex justify-between items-center ">
+        <span className="px-2 border-secondary-foreground">
+          <ModeToggle />
+        </span>
         <Button
           variant="outline"
           size="sm"

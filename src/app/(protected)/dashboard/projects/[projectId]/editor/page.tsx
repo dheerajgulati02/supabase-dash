@@ -1,5 +1,6 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { PlusIcon } from '@radix-ui/react-icons';
 
 export default function TableEditor() {
   return (
@@ -14,7 +15,8 @@ export default function TableEditor() {
           <div className=" text-xs text-primary-foreground ">
             <p>There are no tables available in this Schema</p>
             <Button size="sm" className="bg-accentPr text-foreground mt-4">
-              Create Table
+              <PlusIcon />
+              <p className="px-2">Create Table</p>
             </Button>
           </div>
         </CardContent>

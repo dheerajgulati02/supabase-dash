@@ -31,7 +31,10 @@ export default function SelectOrganisation() {
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
-      <PopoverTrigger asChild className="border-none hover:bg-card">
+      <PopoverTrigger
+        asChild
+        className="border-none hover:bg-popover hover:text-foreground"
+      >
         <Button
           size="sm"
           variant="outline"
@@ -48,14 +51,14 @@ export default function SelectOrganisation() {
                   )?.label
                 }
               </>
-              <span className="flex justify-center border-secondary-foreground rounded-full border px-2 text-primary-foreground text-xs items-center text-center">
+              <span className="flex justify-center rounded-full border px-2  text-xs items-center text-center">
                 Free
               </span>
             </div>
           ) : (
             <div className="flex justify-between w-full">
               <p>Izaan</p>
-              <span className="flex justify-center border-secondary-foreground rounded-full border px-2 text-primary-foreground text-xs items-center text-center">
+              <span className="flex justify-center border-secondary-foreground rounded-full border px-2  text-xs items-center text-center">
                 Free
               </span>
             </div>

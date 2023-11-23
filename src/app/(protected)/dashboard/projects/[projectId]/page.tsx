@@ -1,3 +1,4 @@
+'use client';
 import ProjectInfoCard from '@/components/ProjectInfoCard';
 import {
   AuthkeyIcon,
@@ -14,8 +15,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select';
+import { useTheme } from 'next-themes';
 
 export default function MyProject() {
+  const theme = useTheme();
   return (
     <div className="p-8">
       <div className="flex justify-between items-center py-8">
@@ -47,6 +50,7 @@ export default function MyProject() {
       <section className="grid grid-cols-4">
         <span className="mr-2">
           <ProjectInfoCard
+            theme={theme.theme as string}
             tittle="Database"
             description="REST Requests"
             numOfrequests={378}
@@ -58,6 +62,7 @@ export default function MyProject() {
         <span className="mx-2">
           <ProjectInfoCard
             tittle="Auth"
+            theme={theme.theme as string}
             description="Auth Requests"
             numOfrequests={378}
             from="Nove 2, 4pm"
@@ -67,6 +72,7 @@ export default function MyProject() {
         </span>
         <span className="mx-2">
           <ProjectInfoCard
+            theme={theme.theme as string}
             tittle="Storage"
             description="Storage Requests"
             numOfrequests={378}
@@ -77,6 +83,7 @@ export default function MyProject() {
         </span>
         <span className="mx-2">
           <ProjectInfoCard
+            theme={theme.theme as string}
             tittle="Realtime"
             description="Realtime Requests"
             numOfrequests={378}

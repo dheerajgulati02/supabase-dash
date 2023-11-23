@@ -65,7 +65,7 @@ const Sidebar = () => {
               />
             </Link>
           </div>
-          <section className="py-3">
+          <section className="py-3 ">
             <TooltipProvider delayDuration={0}>
               <Tooltip>
                 <TooltipTrigger>
@@ -85,7 +85,9 @@ const Sidebar = () => {
                     <HomeIcon />
                   </Button>
                 </TooltipTrigger>
-                <TooltipContent>Home</TooltipContent>
+                <TooltipContent className="text-foreground bg-background border">
+                  Home
+                </TooltipContent>
               </Tooltip>
             </TooltipProvider>
             <Separator
@@ -114,7 +116,9 @@ const Sidebar = () => {
                       <TablesIcon />
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>Table Editor</TooltipContent>
+                  <TooltipContent className="text-foreground bg-background border">
+                    Table Editor
+                  </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </div>
@@ -135,7 +139,9 @@ const Sidebar = () => {
                       <SQLEditorIcon />
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>SQL Editor</TooltipContent>
+                  <TooltipContent className="text-foreground bg-background border">
+                    SQL Editor
+                  </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </div>
@@ -166,7 +172,9 @@ const Sidebar = () => {
                       <DatabaseIcon />
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>Database</TooltipContent>
+                  <TooltipContent className="text-foreground bg-background border">
+                    Database
+                  </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </div>
@@ -186,7 +194,9 @@ const Sidebar = () => {
                       <AuthenticationIcon />
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>Authentication</TooltipContent>
+                  <TooltipContent className="text-foreground bg-background border">
+                    Authentication
+                  </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </div>
@@ -207,7 +217,9 @@ const Sidebar = () => {
                       <StorageIcon />
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>Storage</TooltipContent>
+                  <TooltipContent className="text-foreground bg-background border">
+                    Storage
+                  </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </div>
@@ -227,7 +239,9 @@ const Sidebar = () => {
                       <EdgeIcon />
                     </Button>
                   </TooltipTrigger>
-                  <TooltipContent>Edge Function</TooltipContent>
+                  <TooltipContent className="text-foreground bg-background border">
+                    Edge Function
+                  </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
             </div>

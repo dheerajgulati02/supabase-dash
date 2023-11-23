@@ -8,7 +8,7 @@ import {
 } from '@/components/ui/card';
 import { Button } from './ui/button';
 import Image from 'next/image';
-import { ReactNode } from 'react';
+import { useTheme } from 'next-themes';
 
 export type ProjectInfoCardProps = {
   tittle: string;
@@ -16,6 +16,7 @@ export type ProjectInfoCardProps = {
   numOfrequests: number;
   from: string;
   to: string;
+  theme: string;
   Icon: () => JSX.Element;
 };
 export default function ProjectInfoCard({
@@ -24,6 +25,7 @@ export default function ProjectInfoCard({
   numOfrequests,
   from,
   to,
+  theme,
   Icon,
 }: ProjectInfoCardProps) {
   return (
@@ -45,7 +47,9 @@ export default function ProjectInfoCard({
       <CardContent>
         <div className="max-w-full max-h-full overflow-auto">
           <Image
-            src="/graph-demo.png"
+            src={
+              theme === 'light' ? '/graph-demo-light.png' : '/graph-demo.png'
+            }
             alt="graph"
             width={228}
             height={228}
